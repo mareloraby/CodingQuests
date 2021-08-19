@@ -84,17 +84,4 @@ public class WordSearch {
         return  s;
     }
 
-    public static void main(String [] args){
-
-        char boggle[][] = {
-                { 'A', 'A', 'R' },
-                { 'T', 'C', 'D' }};
-        Collection x = new ArrayList<String>();
-        x.add("CAR");
-        x.add("CARD");
-        x.add("CART");
-        x.add("CAT");
-
-        System.out.println(findWords(boggle,new Dictionary(x)).toString());
-    }
 }

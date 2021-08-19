@@ -56,8 +56,9 @@ class NumberSpeller {
         StringBuilder res = new StringBuilder();
 
         String number = num+"";
+        if (number.length()==0) return "zero";
         if (number.length() <= 2) {
-            if (num ==0) return "zero";
+            if (num == 0) return "zero";
             else
             res.append(convert(Math.toIntExact(num),""));
         }
@@ -76,17 +77,17 @@ class NumberSpeller {
 
             res.append(convert((Math.toIntExact(num / 100000000000L) % 10), "hundred "));
 
-            res.append(convert((Math.toIntExact(num / 1000000000) % 100), "billion "));
+            res.append(convert((Math.toIntExact(num / 1000000000 % 100)), "billion "));
 
-            res.append(convert((Math.toIntExact(num / 100000000) % 10), "hundred "));
+            res.append(convert((Math.toIntExact(num / 100000000 % 10)), "hundred "));
 
-            res.append(convert((Math.toIntExact(num / 1000000) % 100), "million "));
+            res.append(convert((Math.toIntExact(num / 1000000 % 100)), "million "));
 
-            res.append(convert((Math.toIntExact(num / 100000) % 10), "hundred "));
+            res.append(convert((Math.toIntExact(num / 100000 % 10)), "hundred "));
 
-            res.append(convert((Math.toIntExact(num / 1000) % 100), "thousand "));
+            res.append(convert((Math.toIntExact(num / 1000 % 100)), "thousand "));
 
-            res.append(convert((Math.toIntExact(num / 100) % 10),"hundred "));
+            res.append(convert((Math.toIntExact(num / 100 % 10)),"hundred "));
 
 
             res.append(convert((Math.toIntExact(num % 100)),""));
@@ -105,7 +106,7 @@ class NumberSpeller {
 
     public static void main(String [] args){
 
-        System.out.println(spellNumber(2222));
+        System.out.println(spellNumber(900000));
     }
 
 
